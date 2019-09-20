@@ -1,0 +1,25 @@
+#headerElement {
+    /* this is the id. i.e. can only be one */
+    font-size: 20pt;
+}
+.mainText {
+    /* this is the class */
+    font-weight: 400;
+}
+h1, p, a {
+    word-wrap: break-word;
+}
+
+#flexDiv {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#centerOuter {
+    display: flex;
+}
+#centerThis {
+    width: auto;
+    flex: 1;
+    justify-content: center;
+}
