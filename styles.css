@@ -1,25 +1,45 @@
 #headerElement {
     /* this is the id. i.e. can only be one */
-    font-size: 20pt;
+    font-size: 14pt;
 }
 .mainText {
     /* this is the class */
     font-weight: 400;
 }
+
+/* Inserting this collapsed row between two flex items will make 
+ * the flex item that comes after it break to a new row */
+ .break {
+    flex-basis: 100%;
+    height: 0;
+  }
+
 h1, p, a {
     word-wrap: break-word;
 }
 
+p { margin: 12px 0;}
+
+body {
+    background-color: lightgrey;
+  }
+
 #flexDiv {
     display: flex;
+    width: 70%;
+    flex-direction: row;
     flex-wrap: wrap;
+    justify-content: flex-start;
+    margin: 0 auto; /*this centers the flex container*/
+    background-color: white;
+    font-size: 14pt;
+    border-style: solid;
+    border-width: 3px;
+    padding: 1%;
 }
 
-#centerOuter {
-    display: flex;
-}
+
 #centerThis {
-    width: auto;
-    flex: 1;
-    justify-content: center;
+    margin: auto; /* I am confused why justify-content: center; does not work. it should override container for this item, but it doesn't */
 }
+
