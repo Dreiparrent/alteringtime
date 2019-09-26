@@ -1,18 +1,34 @@
-// var obj = {
-//     key: 'val'
+// we will use firebase from the html
+// later this will follow the format:
+// const firebase = require('firebase');
+// or 
+// import * as firebase from 'firebase';
+
+console.log(firebase); // proof that firebase exists despit not being a variable
+
+
+
+const database = firebase.database;
+
+const buttonPage2 = document.getElementById('page2');
+console.log(buttonPage2);
+
+const firebase = new FirebaseClass();
+firebase.test();
+
+// const replacePage = () => {
+//     document.body
 // };
-// obj['key'] == obj.key;
 
-// databse.get('user')
+buttonPage2.addEventListener('click', (ev) => {
+    ev.preventDefault();
+    console.log('click');
+    window.location.replace('./page2/index.html');
+    firebase.test();
+});
 
-// var user = {
-//     name: 'name',
-//     age: 21,
-//     height: '5\'5"'
-// };
+// const mustNotChange = 't';
+// let thisCanChange = 't';
 
-const mustNotChange = 't';
-let thisCanChange = 't';
-
-mustNotChange = 'tt';
-thisCanChange = 'tt';
+// mustNotChange = 'tt';
+// thisCanChange = 'tt';
