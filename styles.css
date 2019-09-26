@@ -24,7 +24,7 @@ body {
     background-color: lightgrey;
   }
 
-#flexDiv {
+.flexDiv {
     display: flex;
     width: 70%;
     flex-direction: row;
@@ -39,7 +39,7 @@ body {
 }
 
 
-#centerThis {
+.centerThis {
     margin: auto; /* I am confused why justify-content: center; does not work. it should override container for this item, but it doesn't */
 }
 
