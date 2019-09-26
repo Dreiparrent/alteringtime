@@ -24,11 +24,42 @@
                 Your participation in this study is voluntary and should take about 40 minutes. By advancing to the next screen you acknowledge that participation is voluntary. 
                 </p>                
                 <p id="centerThis">
-                    <button>
-                        <a id="centerThis" href="Page2/index.html">Continue</a>
-                    </bstton>
+                    <button id="page2">
+                        Continue
+                        <!-- <a id="centerThis" href="Page2/index.html">Continue</a> -->
+                    </button>
                 </p>
             </div>
         </div>
+
+        <!--#region Examples-->
+
+        <!-- This is an example of a remote import -->
+        <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-app.js"></script>
+
+        <!-- This shows how you can write (js) scripts inline with html -->
+        <script>
+            var firebaseConfig = {
+                apiKey: "AIzaSyB8ZJ4Q4_4fhTF6zuaY9KnPEATH4RpxYDk",
+                authDomain: "altering-time.firebaseapp.com",
+                databaseURL: "https://altering-time.firebaseio.com",
+                projectId: "altering-time",
+                storageBucket: "",
+                messagingSenderId: "423933237396",
+                appId: "1:423933237396:web:63f24d5529ba8c85a3bc81"
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+        </script>
+
+        <!--#endregion-->
+
+        <!--#region Firebase default-->
+        <!--You will notice that this src is relative. With firebase hosting, the files necessary exist in a nearby folder on the server-->
+        <!-- <script src="/__/firebase/6.6.2/firebase-app.js"></script>
+        <script src="/__/firebase/init.js"></script> -->
+        <!-- #endregion --> 
+        <script src="firebase-class.js"></script>
+        <script src="./index.js"></script>
     </body>
 </html>
