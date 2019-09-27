@@ -33,11 +33,13 @@
         </div>
 
         <!--#region Examples-->
+        <!-- This shows how you can write (js) scripts inline with html -->
+        
 
         <!-- This is an example of a remote import -->
-        <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-app.js"></script>
 
-        <!-- This shows how you can write (js) scripts inline with html -->
+
         <script>
             var firebaseConfig = {
                 apiKey: "AIzaSyB8ZJ4Q4_4fhTF6zuaY9KnPEATH4RpxYDk",
@@ -50,7 +52,9 @@
             };
             // Initialize Firebase
             firebase.initializeApp(firebaseConfig);
+            firebase().database().ref('test').set({ t: 'test' });
         </script>
+        <input id="inputt" type="text"/>
 
         <!--#endregion-->
 
