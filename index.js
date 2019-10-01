@@ -11,21 +11,15 @@ function ogJS(paramHere) {
 
 }
 
-const es6Fn = (paramHere) => {
-
-}
+ 
 
 const firebaseClass = new FirebaseClass(3); // always use "new" with classes this will create a unique version of the class
 
-const firebaseClass2 = new FirebaseClass();
+// const firebaseClass2 = new FirebaseClass();
 
-firebaseClass.testMethod('param1', 'param2');
+// firebaseClass.testMethod('param1', 'param2');
 
 
-// firebaseClass.setDatabaseTest('path', now.toISOString(), 'quest', 5, {
-//     rando: 'randy',
-//     anotherArray: [1, 2, 3]
-// });
 
 
 
@@ -36,14 +30,62 @@ const now = new Date(Date.now());
 buttonPage2.addEventListener('click', (ev) => {
     ev.preventDefault();
     console.log('click');
-    window.location.replace("http://google.com"); //./Page2/index.html
-    firebase.test();
+    window.location.replace("./Page2/index.html"); 
+    // firebase.test();
 });
 
-const fakeTextBox = document.getElementById('inputt');
+
+
+// ------------------------------------------------------------------------------------------------
 
 // TODO: get the event listener working
-fakeTextBox.addEventListener('change', (ev) => {
-    console.log(ev);
-});
 
+const inputFunction = (ev) => {
+    const textBoxValue = ev.srcElement.value;
+    // console.log(ev);
+    // const t = 'test';
+    // t.inc
+    const elemId = ev.srcElement.id;
+    console.log(elemId);
+    firebaseClass.setDatabaseTest(elemId, now.toISOString(), ev.srcElement.value, 5, {
+        rando: 'randy',
+        anotherArray: [1, 2, 3]
+    });
+
+
+
+    // setDatabaseTest(path, time, q1, q2, random);
+    // const isInputt = elemId.includes('ttt');
+    // console.log();
+    // console.log(textBoxValue);
+}
+
+
+const listOfInputs = ['inputt', 'inputtt'];
+
+// console.log(listOfInputs[0]);
+// console.log('len', listOfInputs.length);
+// console.log(listOfInputs[2]);
+
+listOfInputs.forEach(
+    (inp) => {
+        const anyInput = document.getElementById(inp);
+        anyInput.addEventListener('keyup', inputFunction);
+    }
+);
+
+for (
+    let i = 0;
+    i < listOfInputs.length;
+    i++)
+{
+    console.log(
+        listOfInputs[i]
+    );
+}
+
+
+// const inputt = document.getElementById('inputt');
+// const inputtt = document.getElementById('inputtt');
+// inputt.addEventListener('keyup', inputFunction);
+// inputtt.addEventListener('keyup', inputFunction);

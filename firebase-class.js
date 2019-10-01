@@ -17,9 +17,9 @@ class FirebaseClass {
         console.log(this.classVar);
     }
 
-    setDatabaseTest(path, time, q1, q2, random) {
+    setDatabaseTest(path, paramTime, q1, q2, random) {
         firebase.database().ref('test/' + path).set({
-            time: time,
+            time: paramTime,
             questions: [
                 q1,
                 q2
@@ -30,7 +30,6 @@ class FirebaseClass {
 
 
     // TODO: why isnt this working tho
-    "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
     // constructor(logData) {
     //     console.log(logData);
     // }
