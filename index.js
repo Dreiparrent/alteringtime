@@ -27,12 +27,14 @@ const firebaseClass = new FirebaseClass(3); // always use "new" with classes thi
 const buttonPage2 = document.getElementById('page2');
 const now = new Date(Date.now());
 
-buttonPage2.addEventListener('click', (ev) => {
+buttonPage2.addEventListener('click', (ev) => { //first parameter is the type of event "click" or "mouse down" The second paramater is the function we want to call when the event occurs
     ev.preventDefault();
     console.log('click');
     window.location.replace("./Page2/index.html"); 
     // firebase.test();
 });
+
+
 
 
 
@@ -70,7 +72,7 @@ const listOfInputs = ['inputt', 'inputtt'];
 listOfInputs.forEach(
     (inp) => {
         const anyInput = document.getElementById(inp);
-        anyInput.addEventListener('keyup', inputFunction);
+        anyInput.addEventListener('keyup', inputFunction);// this runs the inputfunction for each item on list
     }
 );
 

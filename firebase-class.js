@@ -2,6 +2,7 @@
 
 // despite classes holding/keeping data
 // every time you write "new <ClassName>" a new class is created. 
+// class is a function with a constructor. Constructor automatically runs. 
 class FirebaseClass {
 
     // in classes you don't need qualifier
