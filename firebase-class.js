@@ -3,19 +3,88 @@
 // despite classes holding/keeping data
 // every time you write "new <ClassName>" a new class is created. 
 // class is a function with a constructor. Constructor automatically runs. 
+const outterMost = 1;
+
+// const randomObj = {
+//     variable1: 'asdf',
+//     var2: {
+//         level3: 'inception'
+//     }
+// }
+
+// console.log(randomObj.var2.level3);
+
 class FirebaseClass {
 
     // in classes you don't need qualifier
 
     classVar = 'classVar';
+    outterMost = 2;
+
     constructor(x) {
         this.classVar = 'changed';
         console.log(x);
+        this.outterMost = outterMost;
     }
 
     testMethod = (param1, param2 = 2) => {
         this.classVar = 'changed again';
         console.log(this.classVar);
+    }
+
+    /**
+     * @param {string} location the location of the page to sent to
+     */
+    countDown(location, time = 3000) {
+        let timeLeft = 30;
+        
+        setTimeout(
+            () => { // first parameter is the function run after the timer
+                // change page
+                window.location.replace(location); 
+            },
+            time); // second parameter is the time in milSec
+    }
+
+
+    /**
+     * @param {number} _totalTimeLeft the total time (s) for the timer
+     * @param {HTMLElement} _displayTime this is the exact html element like `<p>innerHTML</p>`
+     */
+
+    _intervalTimer(_totalTimeLeft, _displayTime) {
+        setTimeout(
+            () => {
+                // _totalTimeLeft -= 1;
+                const newTimeLeft = _totalTimeLeft - 1;
+
+                // here is the functional code
+                _displayTime.innerHTML = newTimeLeft.toString();
+
+                if (newTimeLeft > 0) {
+                    // here is the loop
+                    console.log('newTimeLeft', newTimeLeft);
+                    
+                    this._intervalTimer(newTimeLeft, _displayTime);
+                } else {
+                    // this is unnecessary
+                    console.log('done');
+                }
+            },
+            1000
+        );
+    }
+
+    /**
+     * @param {string} location the location of the page to sent to
+     * @param {number} totalTimeLeft the time (s) for the interval
+     * @param {HTMLElement} displayTime this is the exact html element like `<p>innerHTML</p>`
+     */
+    intervalingTimer(location, totalTimeLeft, displayTime) {
+        // here you can write something that runs once before the timer starts
+
+        this._intervalTimer(totalTimeLeft, displayTime);
+        // console.log('1', totalTimeLeft);
     }
 
     setDatabaseTest(path, paramTime, q1, q2, random) {
@@ -28,30 +97,4 @@ class FirebaseClass {
             random: random
         });
     }
-
-
-    // TODO: why isnt this working tho
-    // constructor(logData) {
-    //     console.log(logData);
-    // }
-    // firebase;
-    // constructor() {
-    //     if (!firebase) {
-    //         document.body.innerHTML += '<script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-app.js"></script>'
-    //         firebase.initializeApp({
-    //             apiKey: "AIzaSyB8ZJ4Q4_4fhTF6zuaY9KnPEATH4RpxYDk",
-    //             authDomain: "altering-time.firebaseapp.com",
-    //             databaseURL: "https://altering-time.firebaseio.com",
-    //             projectId: "altering-time",
-    //             storageBucket: "",
-    //             messagingSenderId: "423933237396",
-    //             appId: "1:423933237396:web:63f24d5529ba8c85a3bc81"
-    //         });
-    //     }
-    //     this.firebase = firebase;
-    // }
-
-    // test() {
-    //     console.log(this.firebase);
-    // }
 }

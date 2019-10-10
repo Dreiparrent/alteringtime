@@ -26,3 +26,10 @@ listOfInputs.forEach(
         anyInput.addEventListener('keyup', inputFunction);// this runs the input function for each item on list
     }
 );
+
+// window.location.replace("./Page2/index.html"); 
+
+const thirtySec = 2 * 1000;
+
+firebaseClass.countDown('../index.html');
+

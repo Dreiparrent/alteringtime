@@ -34,6 +34,8 @@ buttonPage2.addEventListener('click', (ev) => { //first parameter is the type of
     // firebase.test();
 });
 
+// firebaseClass.countDown('./Page2/index.html', 30000);
+
 
 
 
