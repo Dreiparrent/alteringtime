@@ -23,7 +23,7 @@ class FirebaseClass {
 
     constructor(x) {
         this.classVar = 'changed';
-        console.log(x);
+        console.log(x, this.classVar);
         this.outterMost = outterMost;
     }
 
@@ -33,11 +33,10 @@ class FirebaseClass {
     }
 
     /**
-     * @param {string} location the location of the page to sent to
+     * @param {string} location the location of the page to send to
      */
     countDown(location, time = 3000) {
-        let timeLeft = 30;
-        
+                
         setTimeout(
             () => { // first parameter is the function run after the timer
                 // change page

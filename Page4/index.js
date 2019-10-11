@@ -2,6 +2,7 @@
 const now = new Date(Date.now());
 
 const firebaseClass = new FirebaseClass(3); // always use "new" with classes this will create a unique version of the class
+const NateClass = new nateClass(3);
 
 const inputFunction = (ev) => {
     const textBoxValue = ev.srcElement.value;
@@ -31,5 +32,17 @@ listOfInputs.forEach(
 
 const thirtySec = 2 * 1000;
 
-firebaseClass.countDown('../index.html');
+firebaseClass.countDown('../index.html');//We put this countdown function in the firebaseClass so that we wouldn't have to add it to every page. We'll probably want to use it on more than one page.
+//NateClass.timer('../index.html'); 
+
+
+//The code below also works, but is a bit more redundant. 
+/*
+setTimeout(
+    () => {window.location.replace('../index.html');
+},
+    5000);
+*/
+
+
 
